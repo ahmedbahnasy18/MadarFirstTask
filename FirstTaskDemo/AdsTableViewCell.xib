@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="174" id="KGk-i7-Jjw" customClass="AdsTableViewCell" customModule="FirstTaskDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="174"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="174"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-9A-1pR">
+                        <rect key="frame" x="0.0" y="-0.5" width="355" height="174"/>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="oDe-9A-1pR" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" id="3yV-ep-8PE"/>
+                <constraint firstItem="oDe-9A-1pR" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="49N-WZ-kCB"/>
+                <constraint firstItem="oDe-9A-1pR" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="LCv-0x-EiM"/>
+                <constraint firstItem="oDe-9A-1pR" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" id="zfk-jp-76d"/>
+            </constraints>
+            <connections>
+                <outlet property="adsImage_img" destination="oDe-9A-1pR" id="Gb4-al-5Qs"/>
+            </connections>
+            <point key="canvasLocation" x="43.5" y="-13"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="3" width="1110" height="624"/>
+    </resources>
+</document>
