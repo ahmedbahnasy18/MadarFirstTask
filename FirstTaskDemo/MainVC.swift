@@ -11,16 +11,19 @@ import UIKit
 class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var dataArr = [Data]()
+    
+    var arr = [UITableViewCell]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        tableView.register(UINib.init(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: IDs.NewsCell)
 //        tableView.register(UINib.init(nibName: "AdsTableViewCell", bundle: nil), forCellReuseIdentifier: IDs.AdsCell)
-        tableView.register(_nibFiles: NewsTableViewCell.self)
-        tableView.register(_nibFiles: AdsTableViewCell.self)
+        tableView.register(NewsTableViewCell.self)
+        tableView.register(AdsTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         loadData()
+        
     }
 
     
@@ -39,20 +42,13 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArr.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if dataArr[indexPath.row].type == Types.News, let cell = tableView.dequeueReusableCell(withIdentifier: IDs.NewsCell, for: indexPath) as? NewsTableViewCell {
-            cell.configureCell(data: dataArr[indexPath.row])
-            return cell
-        } else if dataArr[indexPath.row].type == Types.Ads, let cell = tableView.dequeueReusableCell(withIdentifier: IDs.AdsCell, for: indexPath) as? AdsTableViewCell {
-            cell.configureCell(data: dataArr[indexPath.row])
-            return cell
-        }
-        
-    return UITableViewCell()
-        
- 
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath, data: dataArr[indexPath.row])
+        return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if dataArr[indexPath.row].type == Types.Ads {
             return 200
